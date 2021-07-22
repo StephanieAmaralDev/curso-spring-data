@@ -40,7 +40,7 @@ public class SpringDataApplication implements CommandLineRunner {
 		this.unidadeTrabalhoService = unidadeTrabalhoService;
 		this.relatorioFuncionarioDinamico = relatorioFuncionarioDinamico;
 	}
-
+	//@SpringBootApplication faz com que o spring  seja inicializado junto com a aplicação.
 	public static void main(String[] args) {
 		SpringApplication.run(SpringDataApplication.class, args);
 	}

@@ -15,7 +15,13 @@ import br.com.alura.spring.data.orm.FuncionarioProjecao;
 public interface FuncionarioRepository extends PagingAndSortingRepository<Funcionario, Integer>,
 		JpaSpecificationExecutor<Funcionario> {
 	List<Funcionario> findByNome(String nome);
-	
+
+	/*Derived Queries - queries criadas através de comandos Java
+	JPQL - queries criadas através de uma estrutura SQL, porém com os nomes das entidades Java
+	Native Query - queries padrões SQL que conseguimos executar no nosso Client SQL*/
+
+
+
 	@Query("SELECT f FROM Funcionario f WHERE f.nome = :nome "
 			+ "AND f.salario >= :salario AND f.dataContratacao = :data")
 	List<Funcionario> findNomeSalarioMaiorDataContratacao(String nome, Double salario, LocalDate data);
